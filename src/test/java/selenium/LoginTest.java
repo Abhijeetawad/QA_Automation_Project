@@ -17,9 +17,9 @@ public class LoginTest {
 
     @Test
     public void loginTest() {
-        driver.get("https://example.com/login");
-        driver.findElement(By.id("username")).sendKeys("testuser");
-        driver.findElement(By.id("password")).sendKeys("password123");
+        driver.get("https://practicetestautomation.com/practice-test-login/");
+        driver.findElement(By.id("username")).sendKeys("student");
+        driver.findElement(By.id("password")).sendKeys("Password123");
         driver.findElement(By.id("loginButton")).click();
         System.out.println("Login test executed successfully!");
     }
