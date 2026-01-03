@@ -10,7 +10,7 @@ public class LoginTest {
 
     @BeforeClass
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe"); // Update path
+        System.setProperty("webdriver.chrome.driver", "C:\Users\abhij\Desktop\Automation files\chromedriver-win64\chromedriver.exe"); // Update path
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
