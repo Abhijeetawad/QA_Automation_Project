@@ -12,7 +12,8 @@ public class APITest {
     public void getUserTest() {
         RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
         Response response = RestAssured.get("/users/1");
+
         System.out.println("Response: " + response.getBody().asString());
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(response.getStatusCode(), 200); // Validate status code
     }
 }
