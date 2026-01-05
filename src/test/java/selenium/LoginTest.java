@@ -4,17 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
-import java.time.Duration;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import utils.ExtentReportManager; // Make sure you have this utility class
+import utils.ExtentReportManager;
 
+import java.time.Duration;
+
+@Listeners
 public class LoginTest {
+
     WebDriver driver;
     ExtentReports extent;
     ExtentTest test;
@@ -30,13 +33,12 @@ public class LoginTest {
                 "C:\\Users\\abhij\\Desktop\\Automation files\\chromedriver-win64\\chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
-        // Headless removed to see browserr
-        // options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-infobars", "--disable-extensions");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--disable-extensions");
 
         driver = new ChromeDriver(options);
         test.log(Status.INFO, "Chrome browser launched successfully");
@@ -62,10 +64,8 @@ public class LoginTest {
 
         if (successMessage.contains("Logged In Successfully")) {
             test.log(Status.PASS, "Login test executed successfully!");
-            System.out.println("Login test executed successfully!");
         } else {
             test.log(Status.FAIL, "Login test failed!");
-            System.out.println("Login test failed!");
         }
     }
 
@@ -73,8 +73,6 @@ public class LoginTest {
     public void teardown() {
         if (driver != null) driver.quit();
         test.log(Status.INFO, "Browser closed");
-
-        // Flush report
-        extent.flush();
+        extent.flush(); // Generate report
     }
 }
