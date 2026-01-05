@@ -2,7 +2,7 @@
 <suite name="Automation Suite">
     <test name="Regression">
         <packages>
-            <package name="seleniumBasics"/>
+            <package name="selenium"/>
         </packages>
     </test>
 </suite>
