@@ -1,8 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Automation Suite">
-    <test name="Regression">
+<suite name="QA Automation Suite">
+    <test name="Regression Tests">
         <packages>
             <package name="selenium"/>
+            <package name="api"/>
         </packages>
     </test>
 </suite>
