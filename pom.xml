@@ -2,6 +2,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qa</groupId>
     <artifactId>AutomationProject</artifactId>
@@ -19,24 +20,16 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.8.0</version>
+            <version>7.10.2</version>
             <scope>test</scope>
         </dependency>
 
-         <!-- Extent Reports -->
-         <dependency>
-             <groupId>com.aventstack</groupId>
-             <artifactId>extentreports</artifactId>
-             <version>5.1.1</version>
-         </dependency>
-         
-         <!-- TestNG -->
-         <dependency>
-             <groupId>org.testng</groupId>
-             <artifactId>testng</artifactId>
-             <version>7.10.2</version>
-             <scope>test</scope>
-         </dependency>
+        <!-- Extent Reports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version>
+        </dependency>
 
         <!-- Rest Assured -->
         <dependency>
@@ -49,11 +42,18 @@
 
     <build>
         <plugins>
+            <!-- Maven Surefire Plugin for TestNG -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>
