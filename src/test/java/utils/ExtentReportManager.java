@@ -10,13 +10,10 @@ public class ExtentReportManager {
     public static ExtentReports getExtentReports() {
 
         if (extent == null) {
-
             String reportPath = System.getProperty("user.dir")
-                    + "\\test-output\\ExtentReport.html";
+                    + "/test-output/ExtentReport.html";
 
-            ExtentSparkReporter sparkReporter =
-                    new ExtentSparkReporter(reportPath);
-
+            ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
             sparkReporter.config().setReportName("QA Automation Report");
             sparkReporter.config().setDocumentTitle("Automation Test Results");
 
