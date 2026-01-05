@@ -30,7 +30,7 @@ public class LoginTest {
                 "C:\\Users\\abhij\\Desktop\\Automation files\\chromedriver-win64\\chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
-        // Headless removed to see browser
+        // Headless removed to see browserr
         // options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
